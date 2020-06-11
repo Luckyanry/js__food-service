@@ -13,8 +13,10 @@ const ref = {
 const lastTheme = localStorage.load('theme');
 const status = localStorage.load('isChecked');
 
-ref.body.classList.add(lastTheme);
-ref.input.checked = status;
+if (status) {
+  ref.body.classList.add(lastTheme);
+  ref.input.checked = status;
+}
 
 ref.input.addEventListener('change', checkControl);
 

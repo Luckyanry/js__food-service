@@ -28,14 +28,16 @@ function checkControl(e) {
 
   if (isChecked) {
     bodyClass.add(Theme.DARK);
-    bodyClass.remove(Theme.LIGHT);
+    // bodyClass.remove(Theme.LIGHT);
+    bodyClass.replace(Theme.LIGHT, Theme.DARK);
     localStorage.save('theme', Theme.DARK);
     localStorage.save('isChecked', isChecked);
     return;
   }
 
-  bodyClass.remove(Theme.DARK);
-  bodyClass.add(Theme.LIGHT);
+  // bodyClass.remove(Theme.DARK);
+  // bodyClass.add(Theme.LIGHT);
+  bodyClass.replace(Theme.DARK, Theme.LIGHT);
   localStorage.save('theme', Theme.LIGHT);
   localStorage.save('isChecked', isChecked);
 }
